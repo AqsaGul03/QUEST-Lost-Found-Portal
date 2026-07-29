@@ -1,0 +1,417 @@
+/* ================================================
+   University Lost & Found Portal — style.css
+   Designed by: Fatima (24IT-27) — Frontend Designer
+   Group: ByteBuilders | QUEST Nawabshah | SE 2025-2026
+   ================================================ */
+
+/* ── RESET & BASE ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background-color: #0d1b2a;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar .logo {
+  color: #00b4d8;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.navbar .logo span {
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ccd6f6;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #00b4d8;
+  color: #ffffff;
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  background: linear-gradient(135deg, #0d1b2a 0%, #0077b6 100%);
+  color: white;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.hero h1 span {
+  color: #00b4d8;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #90e0ef;
+  margin-bottom: 35px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  margin: 8px;
+}
+
+.btn-primary {
+  background-color: #00b4d8;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0077b6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,180,216,0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
+}
+
+.btn-secondary:hover {
+  background-color: #00b4d8;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #e63946;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
+}
+
+/* ── CARDS SECTION ── */
+.section {
+  padding: 60px 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-top: 4px solid #00b4d8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #0d1b2a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ── FORM ── */
+.form-container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group label span {
+  color: #e63946;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #1a1a2e;
+  transition: border-color 0.3s ease;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00b4d8;
+  background-color: #ffffff;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* ── REPORT CARDS ── */
+.report-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  border-left: 5px solid #00b4d8;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.report-card:hover {
+  transform: translateX(4px);
+}
+
+.report-card.found {
+  border-left-color: #2dc653;
+}
+
+.report-card .badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-lost {
+  background-color: #ffe0e0;
+  color: #e63946;
+}
+
+.badge-found {
+  background-color: #d4f5dc;
+  color: #2dc653;
+}
+
+.report-card h3 {
+  font-size: 18px;
+  color: #0d1b2a;
+  margin-bottom: 8px;
+}
+
+.report-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.report-card .contact-info {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background-color: #f0f9ff;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+/* ── SEARCH BAR ── */
+.search-section {
+  background: #0d1b2a;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-bar input,
+.search-bar select {
+  flex: 1;
+  min-width: 200px;
+  padding: 13px 18px;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #112233;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.search-bar input::placeholder {
+  color: #8eafc2;
+}
+
+/* ── SUCCESS PAGE ── */
+.success-container {
+  text-align: center;
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 50px 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.success-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.success-container h2 {
+  font-size: 28px;
+  color: #0d1b2a;
+  margin-bottom: 12px;
+}
+
+.success-container p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background-color: #0d1b2a;
+  color: #8eafc2;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  margin-top: 60px;
+}
+
+.footer span {
+  color: #00b4d8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+  .navbar { flex-direction: column; gap: 15px; }
+  .nav-links { flex-wrap: wrap; justify-content: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .section { padding: 40px 15px; }
+  .form-container { padding: 25px 20px; margin: 20px 15px; }
+}
