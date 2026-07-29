@@ -1,0 +1,42 @@
+<!--
+  University Lost & Found Portal — success.html (Success Page)
+  Created by: Aqsa Gul (24IT-29) — Frontend Developer
+  Group: ByteBuilders | QUEST Nawabshah | SE 2025-2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Submitted — QUEST Lost & Found</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="logo">Lost<span>&Found</span> QUEST</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/report-lost">Report Lost</a></li>
+      <li><a href="/report-found">Report Found</a></li>
+      <li><a href="/search">Search Items</a></li>
+    </ul>
+  </nav>
+
+  <!-- SUCCESS MESSAGE -->
+  <div class="success-container">
+    <div class="success-icon">✅</div>
+    <h2>Report Submitted Successfully!</h2>
+    <p>Your report has been received. Other QUEST students will now be able to see it on the Search page and contact you directly.</p>
+    <a href="/" class="btn btn-primary">Go Back to Home</a>
+    <a href="/search" class="btn btn-secondary">View All Reports</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>University Lost & Found Portal &copy; 2026 &nbsp;|&nbsp; Group: <span>ByteBuilders</span> &nbsp;|&nbsp; QUEST Nawabshah</p>
+  </footer>
+
+</body>
+</html>
