@@ -1,0 +1,70 @@
+<!--
+  University Lost & Found Portal — index.html (Home Page)
+  Created by: Aqsa Gul (24IT-29) — Frontend Developer
+  Group: ByteBuilders | QUEST Nawabshah | SE 2025-2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost & Found Portal — QUEST Nawabshah</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="logo">Lost<span>&Found</span> QUEST</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/report-lost">Report Lost</a></li>
+      <li><a href="/report-found">Report Found</a></li>
+      <li><a href="/search">Search Items</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>University <span>Lost & Found</span> Portal</h1>
+    <p>A centralized platform for QUEST Nawabshah students to report and recover lost belongings on campus.</p>
+    <a href="/report-lost" class="btn btn-primary">Report Lost Item</a>
+    <a href="/report-found" class="btn btn-secondary">Report Found Item</a>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Simple steps to report or find your lost item on QUEST campus</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Report Lost Item</h3>
+        <p>Fill in the details of your lost item — name, description, location last seen, date, and your contact information.</p>
+        <a href="/report-lost" class="btn btn-primary">Report Now</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Report Found Item</h3>
+        <p>Found something on campus? Post it here so the owner can contact you and claim their belongings safely.</p>
+        <a href="/report-found" class="btn btn-primary">Post Found Item</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📣</div>
+        <h3>Search & Connect</h3>
+        <p>Browse all lost and found reports, search by item name or filter by campus location to find what you're looking for.</p>
+        <a href="/search" class="btn btn-primary">Search Items</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>University Lost & Found Portal &copy; 2026 &nbsp;|&nbsp; Group: <span>ByteBuilders</span> &nbsp;|&nbsp; QUEST Nawabshah &nbsp;|&nbsp; SE 2025–2026</p>
+  </footer>
+
+</body>
+</html>
