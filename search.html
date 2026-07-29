@@ -1,0 +1,116 @@
+<!--
+  University Lost & Found Portal — search.html (Search & Display Page)
+  Created by: Mahgul (24IT-65) — Frontend Developer
+  Group: ByteBuilders | QUEST Nawabshah | SE 2025-2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Items — QUEST Lost & Found</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="logo">Lost<span>&Found</span> QUEST</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/report-lost">Report Lost</a></li>
+      <li><a href="/report-found">Report Found</a></li>
+      <li><a href="/search">Search Items</a></li>
+    </ul>
+  </nav>
+
+  <!-- SEARCH BAR -->
+  <div class="section">
+    <h2 class="section-title">🔍 Search Lost & Found Items</h2>
+    <p class="section-subtitle">Browse all reports or search by item name and filter by location</p>
+
+    <div class="search-section">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by item name e.g. wallet, phone, bag..." oninput="filterItems()" />
+        <select id="locationFilter" onchange="filterItems()">
+          <option value="">All Locations</option>
+          <option>IT Department</option>
+          <option>Central Library</option>
+          <option>Main Canteen</option>
+          <option>Boys Hostel</option>
+          <option>Girls Hostel</option>
+          <option>Main Gate</option>
+          <option>Examination Hall</option>
+          <option>Sports Ground</option>
+          <option>Admin Block</option>
+        </select>
+        <select id="typeFilter" onchange="filterItems()">
+          <option value="">All Types</option>
+          <option value="lost">Lost Items</option>
+          <option value="found">Found Items</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- REPORT CARDS -->
+    <div id="results">
+
+      {% for item in items %}
+      <div class="report-card {{ 'found' if item['type'] == 'found' else '' }}" data-type="{{ item['type'] }}" data-location="{{ item['location'] }}" data-name="{{ item['item_name']|lower }}">
+        <span class="badge badge-{{ item['type'] }}">{{ item['type']|upper }}</span>
+        <h3>{{ item['item_name'] }}</h3>
+        <p>📍 Location: {{ item['location'] }}</p>
+        <p>📅 Date: {{ item['date'] }}</p>
+        <p>📝 Description: {{ item['description'] }}</p>
+        <div class="contact-info">📞 Contact: {{ item['contact'] }} — {{ item['reporter_name'] }}</div>
+      </div>
+      {% else %}
+      <p style="text-align:center; color:#888; padding:40px;">No reports yet. Be the first to report a lost or found item!</p>
+      {% endfor %}
+
+    </div>
+
+    <!-- NO RESULTS MESSAGE -->
+    <p id="noResults" style="display:none; text-align:center; color:#888; font-size:16px; padding:40px;">
+      No items found matching your search. Try different keywords or clear the filters.
+    </p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>University Lost & Found Portal &copy; 2026 &nbsp;|&nbsp; Group: <span>ByteBuilders</span> &nbsp;|&nbsp; QUEST Nawabshah</p>
+  </footer>
+
+  <!-- SEARCH SCRIPT -->
+  <script>
+    function filterItems() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const location = document.getElementById('locationFilter').value;
+      const type = document.getElementById('typeFilter').value;
+      const cards = document.querySelectorAll('.report-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        const cardLocation = card.getAttribute('data-location');
+        const cardType = card.getAttribute('data-type');
+
+        const matchSearch = name.includes(search);
+        const matchLocation = location === '' || cardLocation === location;
+        const matchType = type === '' || cardType === type;
+
+        if (matchSearch && matchLocation && matchType) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+  </html>
