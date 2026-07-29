@@ -1,0 +1,92 @@
+<!--
+  University Lost & Found Portal — report-lost.html
+  Created by: Bisma (24IT-18) — Frontend Developer
+  Group: ByteBuilders | QUEST Nawabshah | SE 2025-2026
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Lost Item — QUEST Lost & Found</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="logo">Lost<span>&Found</span> QUEST</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/report-lost">Report Lost</a></li>
+      <li><a href="/report-found">Report Found</a></li>
+      <li><a href="/search">Search Items</a></li>
+    </ul>
+  </nav>
+
+  <!-- FORM -->
+  <div class="section">
+    <div class="form-container">
+      <h2 class="form-title">📋 Report Lost Item</h2>
+      <p class="form-subtitle">Please fill in all the details below. Fields marked with <span style="color:#e63946">*</span> are required.</p>
+
+      <form action="/submit-lost" method="post">
+
+        <div class="form-group">
+          <label>Item Name <span>*</span></label>
+          <input type="text" name="item" placeholder="e.g. Blue Wallet, Student ID Card, Backpack" required />
+        </div>
+
+        <div class="form-group">
+          <label>Item Description <span>*</span></label>
+          <textarea name="description" placeholder="Describe the item in detail — color, brand, size, any special marks..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date Lost <span>*</span></label>
+            <input type="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label>Location Last Seen <span>*</span></label>
+            <select name="location" required>
+              <option value="" disabled selected>Select location</option>
+              <option>IT Department</option>
+              <option>Central Library</option>
+              <option>Main Canteen</option>
+              <option>Boys Hostel</option>
+              <option>Girls Hostel</option>
+              <option>Main Gate</option>
+              <option>Examination Hall</option>
+              <option>Sports Ground</option>
+              <option>Admin Block</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Your Contact Information <span>*</span></label>
+          <input type="text" name="contact" placeholder="Phone number or QUEST email address" required />
+        </div>
+
+        <div class="form-group">
+          <label>Your Name <span>*</span></label>
+          <input type="text" name="name" placeholder="Your full name" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; margin:0; padding:15px;">
+          Submit Report
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>University Lost & Found Portal &copy; 2026 &nbsp;|&nbsp; Group: <span>ByteBuilders</span> &nbsp;|&nbsp; QUEST Nawabshah</p>
+  </footer>
+
+</body>
+</html>
